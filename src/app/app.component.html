@@ -1,0 +1,28 @@
+<h1>Getters</h1>
+<h5>Or `Why onPush is good`</h5>
+
+<div>
+  <app-getter-setter [rating]="rating"></app-getter-setter>
+</div>
+
+<div>
+  <app-on-changes [rating]="rating"></app-on-changes>
+</div>
+<hr>
+<div>
+  <p>This button increments the rating</p>
+  <p>Please note that the getter is called multiple times</p>
+  <button (click)="increaseRating()">Increment the rating</button>
+</div>
+<hr>
+<div>
+  <p>This button does something else.</p>
+  <p>Please note that the getter is called multiple times</p>
+  <button (click)="doNothing()">This does nothing</button>
+</div>
+<hr>
+<div>
+  <p>And here is an input which is visible only if rating is an odd number.</p>
+  <p>Please note that the getter is called multiple times when this is visible</p>
+  <input *ngIf="rating % 2" [(ngModel)]="rating">
+</div>
